@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UB-Compatible" content="IE=edge">
+
+    <title>통합검색</title>
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/search.css" />
+    <link type="text/css" rel="stylesheet" href="css/topNavi.css" />
+    <link type="text/css" rel="stylesheet" href="css/searchUI.css" />
+    <link type="text/css" rel="stylesheet" href="css/nav_tab.css" /><!-- tab css -->
+
+    <link type="text/css" rel="stylesheet" href="css/grid.css" />
+    
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/acc-modify-2022.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="../common/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+    
+        <div class="wrapper wrapper_search">
+        <a href="#content" class="skip-navigation"></a><header id="header" class="bdm-header"><form name="form1" method="post" action="./Top.aspx" id="form1">
+
+        <h1 class="logo">
+            <a href="../../NEA/Main/Main.aspx">로고</a>
+        </h1>
+        <div class="bdm-nav gnbWrap">
+            <ul class="nav-depth1 gnb">
+                <li class="depth1">데이터 현황</li>
+                <li class="depth1">데이터분석</li>
+                <li class="depth1">GIS분석</li>
+                <li class="depth1" style="display:none">데이터요청</li>
+                <li class="depth1">마이페이지</li>
+                <li class="depth1">시스템소개</li>
+            </ul>
+        </div>
+        <ul class="control clearfix">
+            <li><a rel="modal:open" class="login" role="button" tabindex="0"><span>테스트맨 [OSS사업팀]</span></a></li>
+            <li><a href="javascript:void(0)" class="menu-open"></a></li>
+            <li><a href="javascript:void(0)" class="menu-close" style="display: none"></a></li>
+        </ul>
+
+        <div class="menu-wrap">
+            <div class="f_Wrap">
+                <ul class="menu">
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1 noBg"><span>데이터 현황</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터산출방식</a>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');"><span>데이터산출대상</span></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>데이터 분석</span></dt>
+                            <dd>
+                                <a href="../../NEA/Main/AllSearch.aspx"><span>통합분석</span></a>
+                                <a href="../../NEA/Main/Analysis.aspx"><span>시설분석</span></a>
+                                <a href="../../NEA/Main/OSPList.aspx"><span>케이블분석</span></a>
+                                <a href="../../NEA/Main/AddrsList.aspx"><span>지역분석</span></a>
+                                <a href="../../NEA/Main/OfficesList.aspx"><span>건물분석</span></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1 noBg"><a target="_blank" href="../../NEA/GIS/NeaMapAddr.aspx"><span>GIS분석</span></a></dt>
+                        </dl>
+                    </li>
+                    <li style="display:none">
+                        <dl>
+                            <dt class="nav-depth1"><a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터요청</a></dt>
+                            <dd></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>마이페이지</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터출력</a>
+                                <a href="../../NEA/Main/BookMarkList.aspx">북마크관리</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>시스템소개</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">활용가이드</a>
+                                <a href="../../NEA/Board/DefaultBoardList.aspx">공지사항</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <input name="hdnid" type="hidden" id="hdnid" value="topMenu02_1">
+
+<input id="winClosed" type="hidden" value="open">
+<input id="errorMessage" type="hidden" value="">
+<input id="informationMessage" type="hidden" value="">
+
+</header>
+            <div class="navigation-Bar" style="" id="navigation">
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+
+</title>
+
+        
+    <div class="container">
+        <ul class="navibreadcrumb">
+            <li class="home"><a href="../../NEA/Main/Main.aspx">홈</a></li>
+            <li><a id="liMenu" role="button" tabindex="0">데이터분석</a></li>
+            <li class="dropdown">
+                <a onclick="myFunction()" class="dropbtn" id="liSubMenu" role="button" tabindex="0">시설분석</a>
+                <div id="breadcrumb_Dropdown" class="dropdown-content"><a href="../../NEA/Main/AllSearch.aspx">통합분석</a><a href="../../NEA/Main/Analysis.aspx">시설분석</a><a href="../../NEA/Main/OSPList.aspx">케이블분석</a><a href="../../NEA/Main/AddrsList.aspx">지역분석</a><a href="../../NEA/Main/OfficesList.aspx">건물분석</a></div>
+            </li>
+        </ul>
+        <div class="breadcrumb-search">
+            <input type="text" id="txtNaviSearch" title="검색어" name="" value="" placeholder="찾고 싶은 데이터를 검색하세요.">
+            <a onclick="fn_naviSearch()" style="cursor:pointer" role="button" tabindex="0">검색</a>
+        </div>
+    </div>
+    <input name="hdnNavid" type="hidden" id="hdnNavid" value="2-1">
+    
+
+
+
+
+</div>
+            
+        <div class="section_container">
+            <div class="aly_title">
+                <h2 class="icon1 -title"> 시설분석</h2>
+            </div>
+            <nav class="tabWrap" style="display:none">
+                <ul class="tabs">
+                    <li class="ml10"><span onclick="fn_tab(&quot;&quot;, this)" class="active" name="tab1">전체</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNA&quot;, this)" name="tab2">IP-Access</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNC&quot;, this)" name="tab3">IP-Core</span></li>
+                    <li><span onclick="fn_tab(&quot;TRN&quot;, this)" name="tab4">전송망</span></li>
+                    <li><span onclick="fn_tab(&quot;PSB&quot;, this)" name="tab5">교환망</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNW&quot;, this)" name="tab6">무선망</span></li>
+                </ul>
+            </nav>
+            <section class="">
+                <div class=" tabBx">
+                    <div class="tabgrid fxColumn pd0 pb20" id="tabgrid">
+                        <div class="tabgrid_area -searchArea" style="display: flex;">
+                            <div>
+                                <ul class="tabgrid_inner formsB">
+                                    <li class="fx_wrap_left">
+                                        <label class="bx_tit" for="검색어">검색어</label>
+                                    </li>
+                                    <li class="fx_wrap_right">
+                                        <ul class="-wrap">
+                                            <li class="merge3">
+                                                <input type="text" id="txtSearch" class="input100 ht28 full" placeholder="장비명, 용도, 주소 등 검색">
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <label class="bx_tit bx_tit_narrow" for="출력건수">출력건수</label>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlPageSize">
+                                                        <option value="10" selected="selected">10건 출력</option>
+                                                        <option value="20" selected="selected">20건 출력</option>
+                                                        <option value="50">50건 출력</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="tabgrid_inner formsB">
+                                    <li class="fx_wrap_left">
+                                        <label class="bx_tit" for="관리센터/국사">관리센터/국사</label>
+                                        <img src="../common/images/breadcrumb_search.png" style="width:25px; padding-left:5px; cursor:pointer" onclick="ShowOfficesSearch()" alt="">
+                                    </li>
+                                    <li class="fx_wrap_right">
+                                        <ul class="-wrap">
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlHeadorgs"><option value="">본부 전체</option><option value="467044">강북/강원NW운용본부</option><option value="467653">강남/서부NW운용본부</option><option value="468042">부산/경남NW운용본부</option><option value="468338">대구/경북NW운용본부</option><option value="468633">전남/전북NW운용본부</option><option value="468994">충남/충북NW운용본부</option><option value="482973">제주단</option></select>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlCenter">
+                                                        <option value="" selected="selected">센터 전체</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlTerm">
+                                                        <option value="" selected="selected">팀 전체</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <div class="inputWrap">
+                                                        <input type="text" id="txtOfficeList" class="input" placeholder="국사 전체" readonly="">
+                                                        <!-- search_result::[s] -->
+                                                        <div class="-sel_optionBox" id="OfficeListBox" style="display:none">
+                                                            <ul class="optList" id="OfficeList">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="merge1"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="" class="toggleDiv" style="display: none">
+                                <ul class="tabgrid_inner formsB">
+                                    <li class="fx_wrap_left">
+                                        <label class="bx_tit" for="서비스망/시설">서비스망/시설</label>
+                                    </li>
+                                    <li class="fx_wrap_right">
+                                        <ul class="-wrap">
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlSvcNetList"><option value="">서비스망 전체</option><option value="11">KORNET</option><option value="21">ACCESS</option><option value="41">Metro-Ethernet</option><option value="42">Metro가입자망</option><option value="82">NIC</option><option value="91">가입자망</option><option value="A1">가입자전송망</option><option value="A2">시내전송망</option><option value="A3">시외전송망</option><option value="BN">BcN</option><option value="EN">교환망</option><option value="PM">PREMIUM</option><option value="VN">VPN</option><option value="W1">무선망</option><option value="WL">WirelessCore</option></select>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <div class="inputWrap">
+                                                        <input type="text" id="txtMainClsList" class="input" placeholder="대분류 전체" readonly="">
+                                                        <!-- search_result::[s] -->
+                                                        <div class="-sel_optionBox" id="MainClsListBox" style="display:none">
+	                                                    <ul class="optList" id="MainClsList">
+	                                                    </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <div class="inputWrap">
+                                                        <input type="text" id="txtSubClsList" class="input" placeholder="소분류 전체" readonly="">
+                                                        <!-- search_result::[s] -->
+                                                        <div class="-sel_optionBox" id="SubClsListBox" style="display:none">
+	                                                    <ul class="optList" id="SubClsList">
+	                                                    </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlUsgList">
+                                                        <option value="" selected="selected">용도 전체</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlModelList">
+                                                        <option value="" selected="selected">모델명 전체</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="tabgrid_inner formsB">
+                                    <li class="fx_wrap_left">
+                                        <label class="bx_tit" for="고객분류">고객분류</label>
+                                    </li>
+                                    <li class="fx_wrap_right">
+                                        <ul class="-wrap">
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select id="ddlSelType">
+                                                        <option value="" selected="selected">고객분류 전체</option>
+                                                        <option value="SM">소상공인</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="merge2"></li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <label class="bx_tit bx_tit_narrow" for="설치위치">설치위치</label>
+                                                </div>
+                                            </li>
+                                            <li class="grid-item">
+                                                <div class="grid-inner">
+                                                    <select style="background-color: lightgray" disabled="">
+                                                        <option value="" selected="selected">KT빌딩구분</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="btnGroup">
+                            <button class="toggleBtn arrowBtn" onclick="return false;">
+                                <span class="mr8">상세검색</span>
+                                <img class="arrow_btn rotate" src="../common/images/btn_down.svg" width="12" height="12" alt="">
+                            </button>
+                            <span onclick="SetBookMark();" class="btnWrap btn_excel" style="cursor:pointer">북마크</span>
+                            <span onclick="SearchExcel();" class="btnWrap btn_excel" style="cursor:pointer">엑셀출력</span>
+                            <span onclick="fn_SearchClear();" class="btnWrap btn_reset_icon" style="cursor:pointer">초기화</span>
+                            <span onclick="fn_Search()" class="btnWrap btn_search_icon" style="cursor:pointer">검색</span>
+                        </div>
+
+                    </div>
+                    <div id="listArea" style="">
+                        <div class="listArea">
+                        <h3 class="listTit_s">검색자료 리스트</h3>
+                        <!-- table overflow-x:[s] -->
+                        <div class="horizontal_scroll" style="overflow-x:auto;">
+                            <table class="dataList" id="dataList">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30px">
+                                            <label class="checkWrap">
+                                                <input type="checkbox" id="selectAllGroup" class="chk_red"><span></span>
+                                            </label>
+                                        </th>
+                                        <th>관리국사</th>
+                                        <th>서비스망</th>
+                                        <th>대분류</th>
+                                        <th>소분류</th>
+                                        <th>용도</th>
+                                        <th>모델명</th>
+                                        <th>장치명</th>
+                                        <th>영향고객</th>
+                                        <th>영향서비스</th>
+                                        <th>고객유형</th>
+                                        <th>설치국사</th>
+                                        <th>주소</th>
+                                        <th>빌딩</th>
+                                        <th>설치위치</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="searchList">    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectCBCJX3277" value="CBCJX3277" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('CBCJX3277')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">교환망</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">교환기</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">DID교환기</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">이너텔</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">LGT_LDK-100</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">현대자동차서비스센터</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCJX3277')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCJX3277')">0</td>    <td onclick="fn_rowChkSelect('CBCJX3277')"></td>    <td onclick="fn_rowChkSelect('CBCJX3277')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">충청북도 청주시 흥덕구 비하동 323 현대자동차서비스</td>    <td onclick="fn_rowChkSelect('CBCJX3277')">현대자동차서비스 </td>    <td onclick="fn_rowChkSelect('CBCJX3277')">CB현대차서비스</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectCBCW04400" value="CBCW04400" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('CBCW04400')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCW04400')">교환망</td>    <td onclick="fn_rowChkSelect('CBCW04400')">교환기</td>    <td onclick="fn_rowChkSelect('CBCW04400')">DID교환기</td>    <td onclick="fn_rowChkSelect('CBCW04400')">이너텔</td>    <td onclick="fn_rowChkSelect('CBCW04400')">LGT_LDK-300</td>    <td onclick="fn_rowChkSelect('CBCW04400')">IBK오송지점_BCN</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCW04400')">1</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCW04400')">3</td>    <td onclick="fn_rowChkSelect('CBCW04400')"></td>    <td onclick="fn_rowChkSelect('CBCW04400')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCW04400')">충청북도 청주시 오송읍 연제리 715 </td>    <td onclick="fn_rowChkSelect('CBCW04400')"> </td>    <td onclick="fn_rowChkSelect('CBCW04400')">CB기업은행오송</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectCBCW04639" value="CBCW04639" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('CBCW04639')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCW04639')">교환망</td>    <td onclick="fn_rowChkSelect('CBCW04639')">교환기</td>    <td onclick="fn_rowChkSelect('CBCW04639')">DID교환기</td>    <td onclick="fn_rowChkSelect('CBCW04639')">이너텔</td>    <td onclick="fn_rowChkSelect('CBCW04639')">SSE_OFFICE SERV 7200</td>    <td onclick="fn_rowChkSelect('CBCW04639')">식약청오송사무소_BCN</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCW04639')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCW04639')">0</td>    <td onclick="fn_rowChkSelect('CBCW04639')"></td>    <td onclick="fn_rowChkSelect('CBCW04639')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCW04639')">충청북도 청주시 오송읍 만수리 864 국도푸르미르</td>    <td onclick="fn_rowChkSelect('CBCW04639')">국도푸르미르 </td>    <td onclick="fn_rowChkSelect('CBCW04639')">CB식약청오송사무소</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectCBCJ10069" value="CBCJ10069" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('CBCJ10069')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">교환망</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">교환기</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">DID교환기</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">DID(일반)[U]</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">SSE_OFFICE SERV 7200</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">이너텔현대카드서청주_BCN</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCJ10069')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('CBCJ10069')">0</td>    <td onclick="fn_rowChkSelect('CBCJ10069')"></td>    <td onclick="fn_rowChkSelect('CBCJ10069')">가경국사</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">충청북도 청주시 흥덕구 강서동 517 자연빌딩</td>    <td onclick="fn_rowChkSelect('CBCJ10069')">자연빌딩 </td>    <td onclick="fn_rowChkSelect('CBCJ10069')">CB현대카드서청주</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP18834" value="SLSP18834" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP18834')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP18834')">가입자망</td>    <td onclick="fn_rowChkSelect('SLSP18834')">스위치</td>    <td onclick="fn_rowChkSelect('SLSP18834')">Ntopia-G</td>    <td onclick="fn_rowChkSelect('SLSP18834')">GTTH-E/V 가입자 스위치</td>    <td onclick="fn_rowChkSelect('SLSP18834')">LOC_E5024H</td>    <td onclick="fn_rowChkSelect('SLSP18834')">GB030021</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP18834')">7</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP18834')">14</td>    <td onclick="fn_rowChkSelect('SLSP18834')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSP18834')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP18834')">서울특별시 송파구 문정동  644 문정현대지식산업센터</td>    <td onclick="fn_rowChkSelect('SLSP18834')">문정현대지식산업센터 C</td>    <td onclick="fn_rowChkSelect('SLSP18834')">문정현대지식산업센터C_지상1층_MDF실(이너텔)</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP19398" value="SLSP19398" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP19398')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP19398')">가입자전송망</td>    <td onclick="fn_rowChkSelect('SLSP19398')">중소형광단국장치</td>    <td onclick="fn_rowChkSelect('SLSP19398')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP19398')">가입자</td>    <td onclick="fn_rowChkSelect('SLSP19398')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP19398')">FU24-0101-02</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP19398')">1</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP19398')">1</td>    <td onclick="fn_rowChkSelect('SLSP19398')"></td>    <td onclick="fn_rowChkSelect('SLSP19398')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP19398')">서울특별시 송파구 문정동  642-3 문정에스케이브이원지엘메트로시티</td>    <td onclick="fn_rowChkSelect('SLSP19398')">문정에스케이브이원지엘메트로시티 </td>    <td onclick="fn_rowChkSelect('SLSP19398')">sl문정GL매트로시티이너텔1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP19397" value="SLSP19397" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP19397')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP19397')">가입자전송망</td>    <td onclick="fn_rowChkSelect('SLSP19397')">중소형광단국장치</td>    <td onclick="fn_rowChkSelect('SLSP19397')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP19397')">가입자</td>    <td onclick="fn_rowChkSelect('SLSP19397')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP19397')">FU24-0101-01</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP19397')">1</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP19397')">2</td>    <td onclick="fn_rowChkSelect('SLSP19397')"></td>    <td onclick="fn_rowChkSelect('SLSP19397')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP19397')">서울특별시 송파구 문정동  642-3 문정에스케이브이원지엘메트로시티</td>    <td onclick="fn_rowChkSelect('SLSP19397')">문정에스케이브이원지엘메트로시티 </td>    <td onclick="fn_rowChkSelect('SLSP19397')">sl문정GL매트로시티이너텔1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP12904" value="SLSP12904" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP12904')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP12904')">가입자전송망</td>    <td onclick="fn_rowChkSelect('SLSP12904')">중소형광단국장치</td>    <td onclick="fn_rowChkSelect('SLSP12904')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP12904')">가입자</td>    <td onclick="fn_rowChkSelect('SLSP12904')">FU24</td>    <td onclick="fn_rowChkSelect('SLSP12904')">FU24-0105-01</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP12904')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP12904')">0</td>    <td onclick="fn_rowChkSelect('SLSP12904')"></td>    <td onclick="fn_rowChkSelect('SLSP12904')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP12904')">서울특별시 송파구 문정동  632 가든파이브웍스관(나동)</td>    <td onclick="fn_rowChkSelect('SLSP12904')">가든파이브웍스관(나동) 1</td>    <td onclick="fn_rowChkSelect('SLSP12904')">SL동남나블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP17794" value="SLSP17794" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP17794')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP17794')">가입자전송망</td>    <td onclick="fn_rowChkSelect('SLSP17794')">통합형장치</td>    <td onclick="fn_rowChkSelect('SLSP17794')">MSPP</td>    <td onclick="fn_rowChkSelect('SLSP17794')">가입자</td>    <td onclick="fn_rowChkSelect('SLSP17794')">TEF_TFOM_S540</td>    <td onclick="fn_rowChkSelect('SLSP17794')">MSPP-0101-01</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP17794')">2</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP17794')">10</td>    <td onclick="fn_rowChkSelect('SLSP17794')"></td>    <td onclick="fn_rowChkSelect('SLSP17794')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP17794')">서울특별시 송파구 가락동  600 가락시장상가관리동</td>    <td onclick="fn_rowChkSelect('SLSP17794')">가락시장상가관리동 </td>    <td onclick="fn_rowChkSelect('SLSP17794')">sl가락시장이너텔1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSPX4103" value="SLSPX4103" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSPX4103')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">가입자전송망</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">통합형장치</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">MSPP</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">가입자</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">TEF_TFOM_S540</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">MSPP-0101-01</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSPX4103')">2</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSPX4103')">6</td>    <td onclick="fn_rowChkSelect('SLSPX4103')"></td>    <td onclick="fn_rowChkSelect('SLSPX4103')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">서울특별시 송파구 문정동  632 가든파이브웍스관(나동)</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">가든파이브웍스관(나동) 1</td>    <td onclick="fn_rowChkSelect('SLSPX4103')">SL동남나블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP07928" value="SLSP07928" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP07928')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07928')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP07928')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP07928')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP07928')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP07928')">AVA_AVAYA CM2.1(ALL-IP기반 PBX)</td>    <td onclick="fn_rowChkSelect('SLSP07928')">동남유통 나블럭</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07928')">74</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07928')">205</td>    <td onclick="fn_rowChkSelect('SLSP07928')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSP07928')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07928')">서울특별시 송파구 문정동  632 가든파이브웍스관(나동)</td>    <td onclick="fn_rowChkSelect('SLSP07928')">가든파이브웍스관(나동) </td>    <td onclick="fn_rowChkSelect('SLSP07928')">SL동남나블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP07929" value="SLSP07929" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP07929')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07929')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP07929')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP07929')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP07929')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP07929')">AVA_AVAYA CM2.1(ALL-IP기반 PBX)</td>    <td onclick="fn_rowChkSelect('SLSP07929')">동남유통 가블럭</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07929')">889</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07929')">2,193</td>    <td onclick="fn_rowChkSelect('SLSP07929')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSP07929')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07929')">서울특별시 송파구 문정동  634 가든파이브라이프(가동)</td>    <td onclick="fn_rowChkSelect('SLSP07929')">가든파이브라이프(가동) </td>    <td onclick="fn_rowChkSelect('SLSP07929')">SL동남가블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP07958" value="SLSP07958" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP07958')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07958')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP07958')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP07958')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP07958')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP07958')">CSC_VIC3-4FXS/DID</td>    <td onclick="fn_rowChkSelect('SLSP07958')">동남유통 다블럭</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07958')">9</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP07958')">17</td>    <td onclick="fn_rowChkSelect('SLSP07958')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSP07958')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP07958')">서울특별시 송파구 문정동  241 동남유통단지다블럭가든파이브툴스</td>    <td onclick="fn_rowChkSelect('SLSP07958')">동남유통단지다블럭가든파이브툴스 </td>    <td onclick="fn_rowChkSelect('SLSP07958')">SL동남다블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP11071" value="SLSP11071" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP11071')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP11071')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP11071')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP11071')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP11071')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP11071')">CSC_VIC3-4FXS/DID</td>    <td onclick="fn_rowChkSelect('SLSP11071')">이마트</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP11071')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP11071')">0</td>    <td onclick="fn_rowChkSelect('SLSP11071')"></td>    <td onclick="fn_rowChkSelect('SLSP11071')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP11071')">서울특별시 송파구 문정동  241 동남유통단지다블럭가든파이브툴스</td>    <td onclick="fn_rowChkSelect('SLSP11071')">동남유통단지다블럭가든파이브툴스 </td>    <td onclick="fn_rowChkSelect('SLSP11071')">SL동남다블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSPMAN06" value="SLSPMAN06" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">교환망</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">교환기</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">CSC_VIC3-4FXS/DID</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">농수산물센타</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSPMAN06')">90</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSPMAN06')">1,248</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">서울특별시 송파구 가락동  600 가락시장상가</td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">가락시장상가 </td>    <td onclick="fn_rowChkSelect('SLSPMAN06')">SL농수식품안전과1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP15707" value="SLSP15707" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP15707')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP15707')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP15707')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP15707')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP15707')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP15707')">CSC_VIC3-4FXS/DID</td>    <td onclick="fn_rowChkSelect('SLSP15707')">가든파이브웍스</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP15707')">0</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP15707')">0</td>    <td onclick="fn_rowChkSelect('SLSP15707')"></td>    <td onclick="fn_rowChkSelect('SLSP15707')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP15707')">서울특별시 송파구 문정동  632 가든파이브웍스관(나동)</td>    <td onclick="fn_rowChkSelect('SLSP15707')">가든파이브웍스관(나동) </td>    <td onclick="fn_rowChkSelect('SLSP15707')">SL동남나블럭1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP05063" value="SLSP05063" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP05063')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP05063')">교환망</td>    <td onclick="fn_rowChkSelect('SLSP05063')">교환기</td>    <td onclick="fn_rowChkSelect('SLSP05063')">DID교환기</td>    <td onclick="fn_rowChkSelect('SLSP05063')">이너텔</td>    <td onclick="fn_rowChkSelect('SLSP05063')">LGT_GDK-300</td>    <td onclick="fn_rowChkSelect('SLSP05063')">지앤조이</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP05063')">1</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP05063')">1</td>    <td onclick="fn_rowChkSelect('SLSP05063')"></td>    <td onclick="fn_rowChkSelect('SLSP05063')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP05063')">서울특별시 송파구 가락동  11-1 영진빌딩</td>    <td onclick="fn_rowChkSelect('SLSP05063')">영진빌딩 </td>    <td onclick="fn_rowChkSelect('SLSP05063')">SL지앤넷1t</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLSP18103" value="SLSP18103" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLSP18103')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP18103')">가입자망</td>    <td onclick="fn_rowChkSelect('SLSP18103')">AccessGateway</td>    <td onclick="fn_rowChkSelect('SLSP18103')">AccessGateway</td>    <td onclick="fn_rowChkSelect('SLSP18103')">SSW용 AGW</td>    <td onclick="fn_rowChkSelect('SLSP18103')">TAM-SS</td>    <td onclick="fn_rowChkSelect('SLSP18103')">가락-가락-BAGW1673</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP18103')">212</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLSP18103')">354</td>    <td onclick="fn_rowChkSelect('SLSP18103')">소상공인</td>    <td onclick="fn_rowChkSelect('SLSP18103')">가락국사</td>    <td onclick="fn_rowChkSelect('SLSP18103')">서울특별시 송파구 문정동  651 문정테라타워1차</td>    <td onclick="fn_rowChkSelect('SLSP18103')">문정테라타워1차 B</td>    <td onclick="fn_rowChkSelect('SLSP18103')">문정테라타워1차B동지상_1MDF실</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectBSBJS2913" value="BSBJS2913" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('BSBJS2913')">가야국사</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">교환망</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">교환기</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">DID교환기</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">이너텔</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">LGT_GK186D</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">백병원 가야</td>    <td style="text-align:right" onclick="fn_rowChkSelect('BSBJS2913')">1</td>    <td style="text-align:right" onclick="fn_rowChkSelect('BSBJS2913')">1,900</td>    <td onclick="fn_rowChkSelect('BSBJS2913')"></td>    <td onclick="fn_rowChkSelect('BSBJS2913')">가야국사</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">부산광역시 부산진구 개금동  633-165 BS백병원KTF기지국</td>    <td onclick="fn_rowChkSelect('BSBJS2913')">BS백병원KTF기지국 </td>    <td onclick="fn_rowChkSelect('BSBJS2913')">BSM_백병원</td>    </tr>    <tr>    <td><label class="checkWrap"><input type="checkbox" id="selectSLGS12298" value="SLGS12298" class="chk_red"><span></span></label></td>    <td onclick="fn_rowChkSelect('SLGS12298')">가양국사</td>    <td onclick="fn_rowChkSelect('SLGS12298')">가입자망</td>    <td onclick="fn_rowChkSelect('SLGS12298')">스위치</td>    <td onclick="fn_rowChkSelect('SLGS12298')">Ntopia-G(UTP2)</td>    <td onclick="fn_rowChkSelect('SLGS12298')">GTTH(10)-E/V가입자 스위치</td>    <td onclick="fn_rowChkSelect('SLGS12298')">LOC_E5616R</td>    <td onclick="fn_rowChkSelect('SLGS12298')">G489U011</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLGS12298')">3</td>    <td style="text-align:right" onclick="fn_rowChkSelect('SLGS12298')">9</td>    <td onclick="fn_rowChkSelect('SLGS12298')"></td>    <td onclick="fn_rowChkSelect('SLGS12298')">가양국사</td>    <td onclick="fn_rowChkSelect('SLGS12298')">서울특별시 강서구 마곡동  788-4 에스오일</td>    <td onclick="fn_rowChkSelect('SLGS12298')">에스오일 -</td>    <td onclick="fn_rowChkSelect('SLGS12298')">SLS오일2가양</td>    </tr></tbody>
+                            </table>
+                        </div>
+                        <!-- table overflow-x:[e] -->
+                    </div>
+
+                    <div id="pagectl" class="-list_footer"><ul class="-list_area">    <li class="left">        <p class="tit_result">검색결과 : <span>1,696건</span></p>    </li>    <li class="right">        <!-- pagination::[s] -->        <div class="pagination" aria-label="페이지 선택 영역">            <ul class="pagination__list">                <li class="pagination__link -Thefirst">                    <a class="pagination__link isDisabled" role="button" tabindex="0"><span class="_hidden">go The first page</span></a>                </li>                <li class="pagination__item -ctrl -prev">                    <a href="javascript:Search(1);" class="pagination__link -link_hover"><span class="_hidden">go first page</span></a>                </li> <li class="pagination__item -active -mrt8" aria-current="page">1</li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(2)" class="pagination__link">2<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(3)" class="pagination__link">3<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(4)" class="pagination__link">4<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(5)" class="pagination__link">5<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(6)" class="pagination__link">6<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(7)" class="pagination__link">7<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(8)" class="pagination__link">8<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(9)" class="pagination__link">9<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -mrt8">                    <a href="javascript:Search(10)" class="pagination__link">10<span class="_hidden">&nbsp; go page</span></a>                </li>                <li class="pagination__item -ctrl -next">                    <a href="javascript:Search(2);" class="pagination__link -link_hover"><span class="_hidden">go next page</span></a>                </li>                <li class="pagination__item -ctrl -last">                    <a href="javascript:Search(85);" class="pagination__link -link_hover"><span class="_hidden">go last page</span></a>                </li>            </ul>        </div>        <!-- pagination::[e] -->    </li></ul></div>
+
+                    <div>
+                        <ul class="-list_btngroup">
+                            <li class="-list_btn darkGray" onclick="javascript:OpenWinInfluence();" style="cursor: pointer"><span class="fc_wt">통합 분석</span></li>
+                            <li class="-list_btn green" onclick="javascript:OpenWinInAddr();" style="cursor: pointer"><span class="fc_wt">GIS분석</span></li>
+                        </ul>
+                    </div>
+                    </div>
+                    
+                </div>
+
+
+            </section>
+            <!-- tab area [e] -->
+        </div>
+            
+            <footer class="-wrap_footer" id="footer">
+
+
+    <div class="loadImg" id="lodingbar" style="display: none;">
+        <img src="../common/images/loading.gif" alt="loading" width="150">
+    </div>
+
+    <div id="divMessView" class="dimmed" style="display: none"></div>
+    <div id="divBookMarkView" class="bookmarkdimmed" style="display: none"></div>
+
+    <div class="footer_container">
+        <p>Copyright© 2022 KT Corp. All rights reserved.</p>
+        <a href="#">
+            <img src="../common/images/logo_bk.svg" alt="KT logo" width="20" height="20">
+        </a>
+    </div>
+    
+</footer>
+        </div>
+
+        
+
+
+    <script src="js/acc-modify-2022.min.js" defer></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".navigation-Bar").mouseleave(function () {
+            if (document.getElementById("breadcrumb_Dropdown").classList.toggle("show")) {
+                document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+            }
+        });
+
+	});
+        $('.arrowBtn').on("click", function (event) {
+            $('.arrow_btn').toggleClass('rotate');
+            $('.arrow_btn').toggleClass('rotate2');
+        });
+        var flip = 0;
+        $(".toggleBtn").click(function () {
+            $(".toggleDiv").toggle(flip++ % 2 === 0);
+        });
+
+    function myFunction() {
+        document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+    }
+    </script>
+</body>
+
+</html>

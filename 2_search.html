@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>통합검색</title>
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/search.css" />
+    <link type="text/css" rel="stylesheet" href="css/topNavi.css" />
+    <link type="text/css" rel="stylesheet" href="css/searchUI.css" />
+    <link type="text/css" rel="stylesheet" href="css/nav_tab.css" />
+    <link type="text/css" rel="stylesheet" href="css/grid.css" />
+    <!-- tab css -->
+    
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/acc-modify-2022.min.css">
+
+    <script src="../common/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+
+        <div class="wrapper wrapper_search">
+        <a href="#content" class="skip-navigation"></a><header id="header" class="bdm-header"><form name="form1" method="post" action="./Top.aspx" id="form1">
+
+
+    
+        <h1 class="logo">
+            <a href="../../NEA/Main/Main.aspx">로고</a>
+        </h1>
+        <div class="bdm-nav gnbWrap">
+            <ul class="nav-depth1 gnb">
+                <li class="depth1">데이터 현황</li>
+                <li class="depth1">데이터분석</li>
+                <li class="depth1">GIS분석</li>
+                <li class="depth1" style="display:none">데이터요청</li>
+                <li class="depth1">마이페이지</li>
+                <li class="depth1">시스템소개</li>
+            </ul>
+        </div>
+        <ul class="control clearfix">
+            <li><a rel="modal:open" class="login" role="button" tabindex="0"><span>테스트맨 [OSS사업팀]</span></a></li>
+            <li><a href="javascript:void(0)" class="menu-open"></a></li>
+            <li><a href="javascript:void(0)" class="menu-close" style="display: none"></a></li>
+        </ul>
+
+        <div class="menu-wrap">
+            <div class="f_Wrap">
+                <ul class="menu">
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1 noBg"><span>데이터 현황</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터산출방식</a>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');"><span>데이터산출대상</span></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>데이터 분석</span></dt>
+                            <dd>
+                                <a href="../../NEA/Main/AllSearch.aspx"><span>통합분석</span></a>
+                                <a href="../../NEA/Main/Analysis.aspx"><span>시설분석</span></a>
+                                <a href="../../NEA/Main/OSPList.aspx"><span>케이블분석</span></a>
+                                <a href="../../NEA/Main/AddrsList.aspx"><span>지역분석</span></a>
+                                <a href="../../NEA/Main/OfficesList.aspx"><span>건물분석</span></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1 noBg"><a target="_blank" href="../../NEA/GIS/NeaMapAddr.aspx"><span>GIS분석</span></a></dt>
+                        </dl>
+                    </li>
+                    <li style="display:none">
+                        <dl>
+                            <dt class="nav-depth1"><a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터요청</a></dt>
+                            <dd></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>마이페이지</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터출력</a>
+                                <a href="../../NEA/Main/BookMarkList.aspx">북마크관리</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="nav-depth1"><span>시스템소개</span></dt>
+                            <dd>
+                                <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">활용가이드</a>
+                                <a href="../../NEA/Board/DefaultBoardList.aspx">공지사항</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <input name="hdnid" type="hidden" id="hdnid" value="topMenu01">
+
+<input id="winClosed" type="hidden" value="open">
+<input id="errorMessage" type="hidden" value="">
+<input id="informationMessage" type="hidden" value="">
+
+
+</header>
+            <div class="navigation-Bar" style="" id="navigation">
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+
+</title>
+
+        
+    <div class="container">
+        <ul class="navibreadcrumb">
+            <li class="home"><a href="../../NEA/Main/Main.aspx">홈</a></li>
+            <li><a id="liMenu" role="button" tabindex="0">데이터분석</a></li>
+            <li class="dropdown">
+                <a onclick="myFunction()" class="dropbtn" id="liSubMenu" role="button" tabindex="0">통합분석</a>
+                <div id="breadcrumb_Dropdown" class="dropdown-content"><a href="../../NEA/Main/AllSearch.aspx">통합분석</a><a href="../../NEA/Main/Analysis.aspx">시설분석</a><a href="../../NEA/Main/OSPList.aspx">케이블분석</a><a href="../../NEA/Main/AddrsList.aspx">지역분석</a><a href="../../NEA/Main/OfficesList.aspx">건물분석</a></div>
+            </li>
+        </ul>
+        <div class="breadcrumb-search">
+            <input type="text" id="txtNaviSearch" title="검색어" name="" value="" placeholder="찾고 싶은 데이터를 검색하세요.">
+            <a onclick="fn_naviSearch()" style="cursor:pointer" role="button" tabindex="0">검색</a>
+        </div>
+    </div>
+    <input name="hdnNavid" type="hidden" id="hdnNavid" value="2-0">
+    
+
+
+
+
+</div>
+            
+        <div class="section_container">
+            <div class="aly_title">
+                <h2 class="icon1 -title"> 통합검색</h2>
+            </div>
+            <!-- search area[s] -->
+            <div class="-searchArea" style="border-bottom: 1px solid rgb(217, 217, 217); display: flex;">
+                <div class="formsA">
+                    <label class="label" for="통합검색">통합검색</label>
+                    <input type="text" class="input" placeholder="검색어를 입력하세요" id="txtSearch">
+                    <span class="btn_search" onclick="fn_Search();" style="cursor:pointer">검색</span>
+                </div>
+                <div class="formsA mt8">
+                    <label class="label" for="검색조건">검색조건</label>
+                    <div class="selectBxWrap" style="display: flex; width: auto;">
+                        <div class="mr4 bxCol">
+                            <div class="grid-inner" style="height:40px">
+                                <div class="inputWrap">
+                                    <input type="text" id="txtHeadorgsList" class="input" placeholder="본부 전체" style="height:40px !important" readonly="">
+                                    <!-- search_result::[s] -->
+                                    <div class="-sel_optionBox" id="HeadorgsListBox" style="display:none">
+                                        <ul class="optList" id="HeadorgsList"><li><div title="본부 전체" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="" onclick="setCombAllSelect('HeadorgsList')"><span>본부 전체</span></label></div></li><li><div title="강북/강원NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="467044" text="강북/강원NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>강북/강원NW운용본부</span></label></div></li><li><div title="강남/서부NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="467653" text="강남/서부NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>강남/서부NW운용본부</span></label></div></li><li><div title="부산/경남NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="468042" text="부산/경남NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>부산/경남NW운용본부</span></label></div></li><li><div title="대구/경북NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="468338" text="대구/경북NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>대구/경북NW운용본부</span></label></div></li><li><div title="전남/전북NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="468633" text="전남/전북NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>전남/전북NW운용본부</span></label></div></li><li><div title="충남/충북NW운용본부" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="468994" text="충남/충북NW운용본부" onclick="setCombSelect('HeadorgsList')"><span>충남/충북NW운용본부</span></label></div></li><li><div title="제주단" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="482973" text="제주단" onclick="setCombSelect('HeadorgsList')"><span>제주단</span></label></div></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mr4 bxCol">
+                            <div class="grid-inner" style="height:40px">
+                                <div class="inputWrap">
+                                    <input type="text" id="txtSvcNetList" class="input" placeholder="서비스망 전체" style="height:40px !important" readonly="">
+                                    <!-- search_result::[s] -->
+                                    <div class="-sel_optionBox" id="SvcNetListBox" style="display:none">
+                                        <ul class="optList" id="SvcNetList"><li><div title="서비스망 전체" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="" onclick="setCombAllSelect('SvcNetList')"><span>서비스망 전체</span></label></div></li><li><div title="KORNET" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="11" text="KORNET" onclick="setCombSelect('SvcNetList')"><span>KORNET</span></label></div></li><li><div title="ACCESS" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="21" text="ACCESS" onclick="setCombSelect('SvcNetList')"><span>ACCESS</span></label></div></li><li><div title="Metro-Ethernet" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="41" text="Metro-Ethernet" onclick="setCombSelect('SvcNetList')"><span>Metro-Ethernet</span></label></div></li><li><div title="Metro가입자망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="42" text="Metro가입자망" onclick="setCombSelect('SvcNetList')"><span>Metro가입자망</span></label></div></li><li><div title="NIC" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="82" text="NIC" onclick="setCombSelect('SvcNetList')"><span>NIC</span></label></div></li><li><div title="가입자망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="91" text="가입자망" onclick="setCombSelect('SvcNetList')"><span>가입자망</span></label></div></li><li><div title="가입자전송망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="A1" text="가입자전송망" onclick="setCombSelect('SvcNetList')"><span>가입자전송망</span></label></div></li><li><div title="시내전송망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="A2" text="시내전송망" onclick="setCombSelect('SvcNetList')"><span>시내전송망</span></label></div></li><li><div title="시외전송망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="A3" text="시외전송망" onclick="setCombSelect('SvcNetList')"><span>시외전송망</span></label></div></li><li><div title="BcN" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="BN" text="BcN" onclick="setCombSelect('SvcNetList')"><span>BcN</span></label></div></li><li><div title="교환망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="EN" text="교환망" onclick="setCombSelect('SvcNetList')"><span>교환망</span></label></div></li><li><div title="PREMIUM" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="PM" text="PREMIUM" onclick="setCombSelect('SvcNetList')"><span>PREMIUM</span></label></div></li><li><div title="VPN" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="VN" text="VPN" onclick="setCombSelect('SvcNetList')"><span>VPN</span></label></div></li><li><div title="무선망" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="W1" text="무선망" onclick="setCombSelect('SvcNetList')"><span>무선망</span></label></div></li><li><div title="WirelessCore" class="check_sm"><label class="checkWrap"><input type="checkbox" class="chk_blue_sm" name="groupD" value="WL" text="WirelessCore" onclick="setCombSelect('SvcNetList')"><span>WirelessCore</span></label></div></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bxCol">
+                            <select id="ddlSelType">
+                                <option value="" selected="selected">고객분류 전체</option>
+                                <option value="SM">소상공인</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <a class="btn_reset" onclick="fn_SearchClear();" style="cursor:pointer" role="button" tabindex="0">초기화</a>
+                </div>
+            </div>
+            <!-- search area[e] -->
+            <nav class="tabWrap" style="display:none">
+                <ul class="tabs">
+                    <li class="ml10"><span onclick="fn_tab(&quot;&quot;, this)" class="active" name="tab1">전체</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNA&quot;, this)" name="tab2">IP-Access</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNC&quot;, this)" name="tab3">IP-Core</span></li>
+                    <li><span onclick="fn_tab(&quot;TRN&quot;, this)" name="tab4">전송망</span></li>
+                    <li><span onclick="fn_tab(&quot;PSB&quot;, this)" name="tab5">교환망</span></li>
+                    <li><span onclick="fn_tab(&quot;IPNW&quot;, this)" name="tab6">무선망</span></li>
+                </ul>
+            </nav>
+            <div id="DataList" style="padding-top:15px"><div class="tabgrid">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">세종국사 : GY04U461<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">가입자망</span></li>        <li class="tab_tbl">가입자망 | 스위치 | Ntopia-G(UTP2) | GTTH-E/V 가입자 스위치 | 모델명 : LOC_E5624R</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">세종특별자치시 - 다정동  6-3             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;A00011633&quot;)">상세보기</div><div class="tab_btn_green" style="cursor:pointer" onclick="OpenWinInAddr(&quot;A00011633&quot;)">GIS</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">창원국사 : V0760011<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">가입자망</span></li>        <li class="tab_tbl">가입자망 | 스위치 | IP-VDSL(50M) | 가입자수용스위치 | 모델명 : TelePrism TM/EX-1172_LR</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">경상남도 창원시 의창구 사림동 36-3             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BCWN19002&quot;)">상세보기</div><div class="tab_btn_green" style="cursor:pointer" onclick="OpenWinInAddr(&quot;BCWN19002&quot;)">GIS</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">동울산국사 : V0240091<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">가입자망</span></li>        <li class="tab_tbl">가입자망 | 스위치 | IP-VDSL(50M) | 가입자수용스위치 | 모델명 : TelePrism TM/EX-1172_LR</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">울산광역시 동구 화정동  850-23             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BDUN13014&quot;)">상세보기</div><div class="tab_btn_green" style="cursor:pointer" onclick="OpenWinInAddr(&quot;BDUN13014&quot;)">GIS</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">동울산국사 : V0430021<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">가입자망</span></li>        <li class="tab_tbl">가입자망 | 스위치 | IP-VDSL(50M) | 가입자수용스위치 | 모델명 : TelePrism TM/EX-1172_LR</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">울산광역시 동구 서부동  287-5             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BDUN13052&quot;)">상세보기</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">수동분기국사(함양) : A0070011<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">가입자망</span></li>        <li class="tab_tbl">가입자망 | 스위치 | IP-ADSL(Ntopia-A) | 가입자수용스위치 | 모델명 : DX6524</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">경상남도 함양군 수동면 화산리 1242-4             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BHYN02552&quot;)">상세보기</div><div class="tab_btn_green" style="cursor:pointer" onclick="OpenWinInAddr(&quot;BHYN02552&quot;)">GIS</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">북광주국사 : N.Gwang-BGW231<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">KORNET</span></li>        <li class="tab_tbl">KORNET | 스위치 | 스위치 | 보안 | 모델명 : ZMO_WormBreaker3500</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">광주광역시 북구 신안동  122-4             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BIZGATE13&quot;)">상세보기</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">익산국사 : IKSAN-BGW070<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">KORNET</span></li>        <li class="tab_tbl">KORNET | 스위치 | 스위치 | 보안 | 모델명 : ZMO_WormBreaker3500</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">전라북도 익산시 남중동  165-1             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BIZGATE42&quot;)">상세보기</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">춘천국사 : CHUNCHE-BGW020<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">Metro-Ethernet</span></li>        <li class="tab_tbl">Metro-Ethernet | 스위치 | 스위치 | 임시용도스위치 | 모델명 : ZMO_WormBreaker3500</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">강원도 춘천시 소양로3가  175-5             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BIZGATE43&quot;)">상세보기</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">신제주국사 : JEJU-BGW158<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">KORNET</span></li>        <li class="tab_tbl">KORNET | 스위치 | 스위치 | 보안 | 모델명 : ZMO_WormBreaker3500</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">제주특별자치도 제주시 연동  321-23             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BIZGATE44&quot;)">상세보기</div>            </div>        </li>    </ul></div><div class="tabgrid mt5">    <ul class="tabgrid_left">        <li class="bxtit" style="background-color: #4374D9; padding:10px; color:#fff; margin-top:-24px">IP-Access</li>    </ul>    <ul class="tabgrid_right">        <li class="tab_tbltitle" style="padding-bottom:5px">안양국사 : ANYANG-BGW025<span style="padding-left:10px"></span><span class="tab_btn_red" style="padding: 0 11px">KORNET</span></li>        <li class="tab_tbl">KORNET | 스위치 | 스위치 | 보안 | 모델명 : ZMO_WormBreaker3500</li>        <li class="tab_tbl">        </li>        <li class="tab_btn" style="margin-top:0px;">경기도 안양시 동안구 비산동 1110-2             <div class="tab_btn_right">                <div class="tab_btn_darkGray" style="cursor:pointer" onclick="OpenWinInfluence(&quot;NES&quot;, &quot;BIZGATE46&quot;)">상세보기</div>            </div>        </li>    </ul></div></div>
+                <!--  더보기 버튼 영역 -->
+            <div class="moreWrap" style="" id="trAddData">
+                <div id="divmorebtn" style="display: block;">
+                    <span class="btn_more" style="cursor: pointer" onclick="fn_AddSearch()"> more</span>
+                </div>
+                <div class="pg_wrap" style="text-align:center">
+                    <!-- pagination[s] -->
+                    <div class="pagination" style="margin:5px">
+                        <span class="page">
+                            <strong>
+                                <label id="lblPageindex">1</label></strong>/<em><label id="lblTotalPage">274,951</label></em>
+                        </span>
+                    </div>
+                    <!-- pagination[e] -->
+                </div>
+            </div>
+        </div>
+            
+            <footer class="-wrap_footer" id="footer">
+
+
+    <div class="loadImg" id="lodingbar" style="display: none;">
+        <img src="../common/images/loading.gif" alt="loading" width="150">
+    </div>
+
+    <div id="divMessView" class="dimmed" style="display: none"></div>
+    <div id="divBookMarkView" class="bookmarkdimmed" style="display: none"></div>
+
+    <div class="footer_container">
+        <p>Copyright© 2022 KT Corp. All rights reserved.</p>
+        <a href="#">
+            <img src="../common/images/logo_bk.svg" alt="KT logo" width="20" height="20">
+        </a>
+    </div>
+
+
+    
+</footer>
+        </div>
+<script src="js/acc-modify-2022.min.js" defer></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".navigation-Bar").mouseleave(function () {
+            if (document.getElementById("breadcrumb_Dropdown").classList.toggle("show")) {
+                document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+            }
+        });
+
+	});
+        $('.arrowBtn').on("click", function (event) {
+            $('.arrow_btn').toggleClass('rotate');
+            $('.arrow_btn').toggleClass('rotate2');
+        });
+        var flip = 0;
+        $(".toggleBtn").click(function () {
+            $(".toggleDiv").toggle(flip++ % 2 === 0);
+        });
+
+    function myFunction() {
+        document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+    }
+    </script>
+
+</body>
+
+</html>

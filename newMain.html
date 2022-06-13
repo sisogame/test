@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>고객영향회선산출</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="title" property="og:title" content="고객영향회선산출">
+    <meta name="url" property="og:url" content="">
+    <meta name="type" property="og:type" content="website">
+    <meta name="author" content="고객영향회선산출">
+
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css" />
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main_new.css">
+
+    <link rel="stylesheet" href="css/acc-modify-2022.min.css">
+    <link type="text/css" rel="stylesheet" href="css/-m_main.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullpage.js"></script>
+    <!-- <script src="../common/js/jquery-1.11.2.min.js"></script> -->
+    <script src="../common/js/jquery.min.js"></script>
+</head>
+
+<body class="main fp-viewing-0" style="min-width: 1300px; overflow: hidden; height: 100%;">
+    <!-- main-header -->
+        <a href="#fullpage" class="skip-navigation"></a><header id="header" class="on">
+            <h1 class="logo">
+                <a href="#">로고</a>
+            </h1>
+            <div class="bdm-nav gnbWrap">
+                <ul class="gnb">
+                    <li><a class="depth1" role="button" tabindex="0">데이터 현황</a></li>
+                    <li><a class="depth1" role="button" tabindex="0">데이터분석</a></li>
+                    <li><a class="depth1" role="button" tabindex="0">GIS분석</a></li>
+                    <li style="display:none"><a class="depth1" role="button" tabindex="0">데이터요청</a></li>
+                    <li><a class="depth1" role="button" tabindex="0">마이페이지</a></li>
+                    <li><a class="depth1" role="button" tabindex="0">시스템소개</a></li>
+                </ul>
+            </div>
+            <ul class="control clearfix">
+                <li><a rel="modal:open" class="login" role="button" tabindex="0"><span>테스트맨 [OSS사업팀]</span></a></li>
+                <li><a href="javascript:void(0)" class="menu-open"></a></li>
+                <li><a href="javascript:void(0)" class="menu-close" style="display: none"></a></li>
+            </ul>
+
+            <div class="menu-wrap">
+                <div class="f_Wrap">
+                    <ul class="menu">
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><span>데이터 현황</span></dt>
+                                <dd>
+                                    <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터산출방식</a>
+                                    <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');"><span>데이터산출대상</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>데이터 분석</span></dt>
+                                <dd>
+                                    <a href="../../NEA/Main/AllSearch.aspx"><span>통합분석</span></a>
+                                    <a href="../../NEA/Main/Analysis.aspx"><span>시설분석</span></a>
+                                    <a href="../../NEA/Main/OSPList.aspx"><span>케이블분석</span></a>
+                                    <a href="../../NEA/Main/AddrsList.aspx"><span>지역분석</span></a>
+                                    <a href="../../NEA/Main/OfficesList.aspx"><span>건물분석</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><a target="_blank" href="../../NEA/GIS/NeaMapAddr.aspx"><span>GIS분석</span></a></dt>
+                            </dl>
+                        </li>
+                        <li style="display:none">
+                            <dl>
+                                <dt class="nav-depth1"><a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터요청</a></dt>
+                                <dd></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>마이페이지</span></dt>
+                                <dd>
+                                    <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">데이터출력</a>
+                                    <a href="../../NEA/Main/BookMarkList.aspx">북마크관리</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>시스템소개</span></dt>
+                                <dd>
+                                    <a href="javascript:setAlertMessage('서비스 전환 준비중입니다.');">활용가이드</a>
+                                    <a href="../../NEA/Board/DefaultBoardList.aspx">공지사항</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //main-header -->
+
+        <div class="main-content fullpage-wrapper" id="fullpage" style="height: 100%; position: relative; touch-action: none; transform: translate3d(0px, 0px, 0px);">
+            <div class="section fp-section active fp-table fp-completely" id="slide1" data-fp-styles="null" style="height: 928px;"><div class="fp-tableCell" style="height: 928px;">
+                <div class="kv-wrap">
+                    <div class="content" id="content">
+                        <div class="search clearfix">
+                            <div class="search-detail">
+                                <div class="label" id="divsearch-detail" tabindex="0" role="button" title="상세 검색 레이어 보기/숨기기">
+                                    <p>상세 검색</p>
+                                    <i></i>
+                                </div>
+                                <form method="post">
+                                    <fieldset>
+                                        <legend>통합데이터 분류 및 분야 선택</legend>
+                                        <div class="select-wrap clearfix">
+                                            <div class="select">
+                                                <p class="title">본부</p>
+                                                <ul class="ul-wrap check_style1 scroll-style" id="HeadorgsList"><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList0" value=""><label for="HeadorgsList0" onclick="setCombAllSelect('HeadorgsList')" role="checkbox" tabindex="0"><span></span>본부 전체</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList467044" value="467044"><label for="HeadorgsList467044" role="checkbox" tabindex="0"><span></span>강북/강원NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList467653" value="467653"><label for="HeadorgsList467653" role="checkbox" tabindex="0"><span></span>강남/서부NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList468042" value="468042"><label for="HeadorgsList468042" role="checkbox" tabindex="0"><span></span>부산/경남NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList468338" value="468338"><label for="HeadorgsList468338" role="checkbox" tabindex="0"><span></span>대구/경북NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList468633" value="468633"><label for="HeadorgsList468633" role="checkbox" tabindex="0"><span></span>전남/전북NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList468994" value="468994"><label for="HeadorgsList468994" role="checkbox" tabindex="0"><span></span>충남/충북NW운용본부</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="HeadorgsList482973" value="482973"><label for="HeadorgsList482973" role="checkbox" tabindex="0"><span></span>제주단</label></p></li></ul>
+                                            </div>
+                                            <div class="select">
+                                                <p class="title">서비스</p>
+                                                <ul class="ul-wrap check_style1 scroll-style" id="SvcNetList"><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList0" value=""><label for="SvcNetList0" onclick="setCombAllSelect('SvcNetList')" role="checkbox" tabindex="0"><span></span>서비스망 전체</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList11" value="11"><label for="SvcNetList11" role="checkbox" tabindex="0"><span></span>KORNET</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList21" value="21"><label for="SvcNetList21" role="checkbox" tabindex="0"><span></span>ACCESS</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList41" value="41"><label for="SvcNetList41" role="checkbox" tabindex="0"><span></span>Metro-Ethernet</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList42" value="42"><label for="SvcNetList42" role="checkbox" tabindex="0"><span></span>Metro가입자망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList82" value="82"><label for="SvcNetList82" role="checkbox" tabindex="0"><span></span>NIC</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetList91" value="91"><label for="SvcNetList91" role="checkbox" tabindex="0"><span></span>가입자망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListA1" value="A1"><label for="SvcNetListA1" role="checkbox" tabindex="0"><span></span>가입자전송망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListA2" value="A2"><label for="SvcNetListA2" role="checkbox" tabindex="0"><span></span>시내전송망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListA3" value="A3"><label for="SvcNetListA3" role="checkbox" tabindex="0"><span></span>시외전송망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListBN" value="BN"><label for="SvcNetListBN" role="checkbox" tabindex="0"><span></span>BcN</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListEN" value="EN"><label for="SvcNetListEN" role="checkbox" tabindex="0"><span></span>교환망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListPM" value="PM"><label for="SvcNetListPM" role="checkbox" tabindex="0"><span></span>PREMIUM</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListVN" value="VN"><label for="SvcNetListVN" role="checkbox" tabindex="0"><span></span>VPN</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListW1" value="W1"><label for="SvcNetListW1" role="checkbox" tabindex="0"><span></span>무선망</label></p></li><li><p class="dt classifyAll"><input type="checkbox" id="SvcNetListWL" value="WL"><label for="SvcNetListWL" role="checkbox" tabindex="0"><span></span>WirelessCore</label></p></li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap col2 clearfix">
+                                            <a href="javascript:setAllClear();" class="line btnNew reset btn-reset"><span>초기화</span></a>
+                                            <a onclick="$(&quot;#divsearch-detail&quot;).click()" class="blue btnNew btn-search-detail" style="cursor:pointer" role="button" tabindex="0">확인</a>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="search-input">
+                                <!-- <input type="text" title="검색어" name="searchKey" value="" placeholder="통합 검색어" class="w-full"> -->
+                                <!-- <a href="#" class="btn-search"><span>키워드 </span>검색</a> -->
+                                <div class="formGuide -fx_start" style="position: relative;">
+                                    <input type="text" id="txtSearch" name="searchKey" class="input -m-input_size btn_select" placeholder="통합 검색어" autocomplete="off">
+                                    <!-- search_result::[s] -->
+                                    <div class="optionBox" id="optionBox" style="display:none">
+                                        <ul class="optList ul-wrap" id="SearchList">
+                                    </ul></div>
+                                    <!-- search_result::[e] -->
+                                    <span class="btn-search" style="cursor:pointer" onclick="fn_Search()">키워드 검색</span>
+                                    <!-- <a href="#" class="btn_-search">통합검색</a> -->
+
+                                </div>
+                                <div class="search-bottom">
+                                    <dl>
+                                        <dt style="display:none">인기검색어</dt>
+                                        <dd style="display:none">
+                                            <a href="" id="topKeyword-search">
+                                                <span id="topKeyword">#유동인구</span>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                    <div class="search-guide">
+                                        <a style="cursor:pointer" class="pop-open" id="search-guide-pop" onclick="$('.search-guide-pop').show();" role="button" tabindex="0"><span>검색 가이드</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popular-data">
+                            <div class="mt80">
+                                <ul class="BxInWrap">
+                                    <li class="bxArea">
+                                        <a target="_blank" href="../../NEA/GIS/NeaMapAddr.aspx" class="-bx-hvrfade">
+                                            <img src="../common/images/icon1.svg" name="menu1" width="52" height="52" border="0" alt="GIS분석">
+                                            <p class="pCon">GIS분석</p>
+                                        </a>
+                                    </li>
+                                    <li class="bxArea">
+                                        <a href="../../NEA/Main/Analysis.aspx" class="-bx-hvrfade">
+                                            <img src="../common/images/icon2.svg" name="menu2" width="52" height="52" border="0" alt="시설분석">
+                                            <p class="pCon">시설분석</p>
+                                        </a>
+                                    </li>
+                                    <li class="bxArea">
+                                        <a href="../../NEA/Main/OSPList.aspx" class="-bx-hvrfade">
+                                            <img src="../common/images/icon3.svg" name="menu3" width="52" height="52" border="0" alt="케이블분석">
+                                            <p class="pCon">케이블분석</p>
+                                        </a>
+                                    </li>
+                                    <li class="bxArea">
+                                        <a href="../../NEA/Main/AddrsList.aspx" class="-bx-hvrfade">
+                                            <img src="../common/images/icon5.svg" name="menu4" width="52" height="52" border="0" alt="지역분석">
+                                            <p class="pCon">지역분석</p>
+                                        </a>
+                                    </li>
+                                    <li class="bxArea">
+                                        <a href="../../NEA/Main/OfficesList.aspx" class="-bx-hvrfade">
+                                            <img src="../common/images/icon4.svg" name="menu5" width="52" height="52" border="0" alt="건물분석">
+                                            <p class="pCon">건물분석</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="scroll"></span>
+                </div>
+                <!-- main-popup -->
+            <button type="button" class="btn-next-section"></button></div></div>
+            <div class="section fp-section fp-table" id="slide2" data-fp-styles="null" style="height: 928px;"><div class="fp-tableCell" style="height: 928px;">
+                <div class="platform-wrap">
+                    <div class="content">
+                        <h2>영향회선 산출 서비스망</h2>
+                        <!-- platform-inner -->
+                        <div class="platform-inner clearfix main-platform">
+                            <div class="left">
+                                <p class="title">고객영향회선 산출시스템은 <strong>10개</strong>의 데이터 분류체계로
+                                    <br>
+                                    고객의 영향도를 산출분석하고 있습니다.</p>
+                                <div class="platform-list-wrap">
+                                    <div class="platform-list slick-initialized slick-slider">
+                                        <div class="slick-list"><div class="slick-track" style="opacity: 1; width: 600px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 600px;">
+                                            <div class="box platform1">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>Access</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform2">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>Core망</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform3">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>전송망</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform4">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>교환망</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform5">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>무선망</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform6">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>선로</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform7">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>건물</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform8">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>지역</p>
+                                                </a>
+                                            </div>
+                                            <div class="box platform9">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p>KT국사</p>
+                                                </a>
+                                            </div>
+                                            <div class="box ">
+                                                <a href="javascript:void(0)" tabindex="0">
+                                                    <p></p>
+                                                </a>
+                                            </div>
+                                        </div></div></div>
+                                    </div>
+                                    <div class="arrow">
+                                        <span class="prev slick-arrow slick-hidden" aria-disabled="true" tabindex="-1">prev</span>
+                                        <span class="next slick-arrow slick-hidden" aria-disabled="true" tabindex="-1">next</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="title-wrap">
+                                    <p class="title">
+                                        <br>
+                                        <strong>데이터 분류</strong></p>
+                                </div>
+                                <div class="platform-result on" data-name="platform0">
+                                    <p>플랫폼을 선택하시면
+                                        <br>
+                                        각 분야별 빅데이터 센터를<br>
+                                        확인하실 수 있습니다.</p>
+                                </div>
+                                <div class="platform-result" data-name="platform1">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">문화 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국문화정보원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>국립중앙도서관</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>국민체육진흥공단</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform2">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="images/img_platform2-center.png" alt="">
+                                                <p><span class="blue">통신 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="images/img_platform2-center0.png" alt="">
+                                                <p><span class="blue">주관 </span>케이티</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>경기대학교</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>네스</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>넥스트이지</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>두잉랩</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>모토브</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform3">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://kdx.kr/main" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">유통 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>매일방송</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>삼성카드</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>CJ올리브네트웍스</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>SK텔레콤</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform4">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-cancer.kr" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">헬스케어 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>국립암센터</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>삼성서울병원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>연대 세브란스병원</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform5">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-transportation.kr" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">교통 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국교통연구원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국도로공사</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국철도공사</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform6">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-environment.kr/user/main.do" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">환경 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국수자원공사</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>한국기상산업기술원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>국립생태원</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform7">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-finance.kr/main.do" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">금융 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>비씨카드</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>노타</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>닐슨코리아</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform8">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-sme.kr/#/datastore/landing" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">중소기업 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>더존비즈온</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>빅밸류</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>한국생산성본부</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform9">
+                                    <ul class="scroll-style">
+                                        <li><a href="https://www.bigdata-region.kr/#/" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">지역경제 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>경기도청</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>경기일자리재단</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>경기신용보증재단</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform10">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">산림 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국임업진흥원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>비글</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>아로정보기술</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform11">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">소방안전 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>소방청</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>세종시 소방본부</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>전북소방본부</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>울산시 소방본부</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>제주소방안전본부</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform12">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">스마트치안 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>경찰대학 치안정책연구소</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>수원시청</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>한국토지주택공사</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform13">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">해양수산 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국해양수산개발원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>환경과학기술</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform14">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">농식품 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국농수산식품유통공사</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>이지팜</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>유로지스넷</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform15">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">라이프로그 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>원주연세의료원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>강원대학교 산학협력단</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>고려대의료원</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="platform-result" data-name="platform16">
+                                    <ul class="scroll-style">
+                                        <li><a href="#" target="_blank">
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">디지털 산업혁신 빅데이터 플랫폼</span></p>
+                                            </div>
+                                        </a></li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p><span class="blue">주관 </span>한국산업기술시험원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>한국기업데이터</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <img src="" alt="">
+                                                <p>한국산업지능화협회</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="scroll" style="background:url(images/ico_scroll_updown.png)no-repeat center; height:65px;"></span>
+                </div>
+            <button type="button" class="btn-next-section"></button></div></div>
+            <div class="section fp-section fp-table" id="slide3" data-fp-styles="null" style="height: 928px;"><div class="fp-tableCell" style="height: 928px;">
+                <div class="chart-wrap">
+                    <div class="content">
+                        <h2>데이터 현황</h2>
+                        <ul class="chart-tab-nav">
+                            <li class="on"><a href="javascript:void(0)" title="선택됨">전체보기</a></li>
+                            <li><a href="javascript:void(0)">데이터 분류별</a></li>
+                            <li><a href="javascript:void(0)">플랫폼 분야별</a></li>
+                        </ul>
+                        <div class="chart-tab-box">
+                            <div class="chart-inner1 on">
+                                <div>
+                                    <ul class="count-num">
+                                        <li>
+                                            <!-- <span class="spoqa" id="counter1"></span> -->
+                                            <span class="counter" data-target="23106720">0</span>
+
+                                            <p>시설</p>
+                                        </li>
+                                        <li>
+                                            <!-- <span class="spoqa" id="counter2"></span> -->
+                                            <span class="counter" data-target="13112516">0</span>
+                                            <p>고객</p>
+                                        </li>
+                                        <!-- <li><span class="spoqa" id="counter3"></span><p>Service</p></li> -->
+                                        <li>
+                                            <!-- <span class="spoqa" id="counter3"></span> -->
+                                            <span class="counter" data-target="18310872">0</span>
+                                            <p>서비스</p>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="link-line"><span>데이터 전체현황 보기</span></a>
+                                </div>
+                                <p class="tab-nav-title">데이터 분류별 / 지역 별 / 키워드별 / 플랫폼 분야별로<br class="mob">
+                                    상세하게 데이터를 확인할 수 있습니다.</p>
+                                <ul class="tab-nav">
+                                    <li><a href="#">데이터 분류별</a></li>
+                                    <li><a href="#">지역 별</a></li>
+                                    <li><a href="#">키워드 별</a></li>
+                                    <li><a href="#">플랫폼 분야별</a></li>
+                                </ul>
+                            </div>
+                            <div class="chart-inner2">
+                                <p class="title">제공되는 데이터를 11개의 데이터 분류별로 확인할 수 있습니다.</p>
+                                <div class="chart-area" id="dashboard-treemap-chart1" data-tab-group="chart" data-tab-content="chart1">
+                                </div>
+                            </div>
+                            <div class="chart-inner3">
+                                <p class="title">제공되는 데이터를 16개의 플랫폼 분야별로 확인할 수 있습니다.</p>
+                                <div class="chart-area" id="dashboard-treemap-chart2" data-tab-group="chart" data-tab-content="chart2" style="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="scroll" style="background:url(images/ico_scroll_up.png)no-repeat center; height:65px; margin-bottom:15px;"></span>
+                </div>
+                <footer class="-wrap_footer">
+                    <div class="footer_container ">
+                        <p class="copyright">Copyright© 2022 KT Corp. All rights reserved.</p>
+                        <a href="#">
+                            <img src="../common/images/logo_bk.svg" alt="KT logo" width="24" height="24">
+                        </a>
+                    </div>
+                </footer>
+            </div></div>
+        </div>
+        <!-- pop -->
+        <div class="platform-fixed">
+            <div class="dim"></div>
+            <p class="title">
+                <br>
+                <strong>빅데이터</strong> 플랫폼 및 센터<a href="javascript:void(0)" class="platform-result-close">닫기</a></p>
+            <div class="platform-result" data-name="platform1">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">문화 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국문화정보원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>국립중앙도서관</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform2">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="images/img_platform2-center.png" alt="">
+                            <p><span class="blue">통신 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="images/img_platform2-center0.png" alt="">
+                            <p><span class="blue">주관 </span>케이티</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>경기대학교</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>네스</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform3">
+                <ul class="scroll-style">
+                    <li><a href="https://kdx.kr/main" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">유통 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>매일방송</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>삼성카드</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>CJ올리브네트웍스</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform4">
+                <ul class="scroll-style">
+                    <li><a href="https://www.bigdata-cancer.kr" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">헬스케어 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>국립암센터</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>삼성서울병원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>연대 세브란스병원</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform5">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">교통 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국교통연구원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국도로공사</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국철도공사</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform6">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">환경 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국수자원공사</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국기상산업기술원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>국립생태원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국환경정책평가연구원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국지질자원연구원</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform7">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">금융 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>비씨카드</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>노타</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform8">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">중소기업 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>더존비즈온</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>빅밸류</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국생산성본부</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform9">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">지역경제 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>경기도청</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>경기일자리재단</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>경기신용보증재단</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform10">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">산림 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국임업진흥원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>비글</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>아로정보기술</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform11">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">소방안전 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>소방청</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>세종시 소방본부</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>전북소방본부</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform12">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">스마트치안 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>경찰대학 치안정책연구소</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>수원시청</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국토지주택공사</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform13">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">해양수산 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국해양수산개발원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>환경과학기술</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>빌리언21</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform14">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">농식품 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국농수산식품유통공사</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>이지팜</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>유로지스넷</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform15">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">라이프로그 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>원주연세의료원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>강원대학교 산학협력단</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>고려대의료원</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="platform-result" data-name="platform16">
+                <ul class="scroll-style">
+                    <li><a href="#" target="_blank">
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">디지털 산업혁신 빅데이터 플랫폼</span></p>
+                        </div>
+                    </a></li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p><span class="blue">주관 </span>한국산업기술시험원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국기업데이터</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="" alt="">
+                            <p>한국산업지능화협회</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="search-guide-pop pop">
+            <div class="dim"></div>
+            <div class="pop-wrap scroll-style">
+                <div class="pop-title">
+                    검색 가이드
+                <a href="javascript:void(0)" class="pop-close bk" title="닫기" onclick="$('.search-guide-pop').hide();"><span class="hide">닫기</span></a>
+                </div>
+                <div class="pop-cont">
+                    <div class="search-guide-box">
+                        <p class="title">1. 단어를 <span class="red">포함</span>해서 검색하고 싶을 경우 단어 앞에 ‘+’ 를 넣어 주세요.</p>
+                        <p class="noti">‘+’ 앞에는 공백을 포함해야 합니다.</p>
+                        <div class="ex">
+                            <span>예시</span>
+                            <div class="input">지역 +문화</div>
+                        </div>
+                        <span class="grey">※ 검색 창에 ‘지역 +문화’를 입력 했을 경우 ‘지역’에 대해 ‘문화’가 포함된 데이터가 검색됩니다.</span>
+                    </div>
+                    <div class="search-guide-box">
+                        <p class="title">2. 단어를 <span class="red">제외</span>해서 검색하고 싶을 경우 단어 앞에 ‘-’ 를 넣어 주세요.</p>
+                        <p class="noti">‘-’ 앞에는 공백을 포함해야 합니다.</p>
+                        <div class="ex">
+                            <span>예시</span>
+                            <div class="input">날씨 -흐림</div>
+                        </div>
+                        <span class="grey">※ 검색 창에 ‘날씨 -흐림’를 입력 했을 경우 ‘날씨’에 대해 ‘흐림’을 제외한 데이터가 검색됩니다.</span>
+                    </div>
+                    <div class="search-guide-box">
+                        <p class="title">3. 하나 이상 포함해서 검색 하고 싶을 경우 단어 앞에 ‘ㅣ’ 를 넣어 주세요.</p>
+                        <p class="noti">‘ㅣ’ 앞/뒤에는 공백을 포함해야 합니다.</p>
+                        <div class="ex">
+                            <span>예시</span>
+                            <div class="input">스포츠 ㅣ 야구 ㅣ 축구</div>
+                        </div>
+                        <span class="grey">※ 검색 창에 ‘스포츠 ㅣ 야구 ㅣ 축구’를 입력 했을 경우 ‘스포츠’에 대해 ‘야구’와 '축구’중 하나 이상 포함된 데이터가 검색됩니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- // pop -->
+
+        <a href="javascript:void(0);" class="top">맨 위로 버튼</a>
+        <script src="js/acc-modify-2022.min.js" defer=""></script>
+        <script src="js/main.js"></script>
+        <script src="js/slick.min.js"></script>
+
+        <!-- Animate Numbers JS  -->
+        <script src="js/functions.js"></script>
+
+
+        <script src="js/jquery.counterup.js"></script>
+
+
+        <script>
+
+            $('.platform-list').slick({
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                draggable: false,
+                prevArrow: $('.platform-inner .left .prev'),
+                nextArrow: $('.platform-inner .left .next')
+            });
+
+        </script>
+
+        <div id="divMessView" class="dimmed" style="display: none"></div>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                
+                fnGetDataCountSelect();
+
+                $(".optionBox").mouseleave(function () {
+                    $(".optionBox").hide();
+                });
+
+                $("#txtSearch").mouseenter(function () {
+                    if ($("#txtSearch").val() != "") {
+                        $(".optionBox").show();
+                    }
+                });
+
+                fnCodeList("HeadorgsList", "HeadorgsList", "본부 전체", '');
+                fnCodeList("SvcNetList", "SvcNetList", "서비스망 전체", '');
+
+                $("#txtSearch").keyup(function (e) {
+                    if ($("#txtSearch").val().trim() != "") {
+                        fn_searchKey();
+                    }
+                });
+
+                $("#txtSearch").keypress(function (e) {
+                    if ($("#txtSearch").val().trim() != "") {
+                        fn_searchKey();
+                    }
+
+                    if (e.which == 13) {
+                        fn_Search();
+                        return false;
+                    }
+
+                });
+            });
+
+
+           
+
+            function fn_Search() {
+                if ($("#txtSearch").val() == "") {
+                    setAlertMessage("검색어를 입력하세요.");
+                    return false;
+                }
+
+                var searchText = $("#txtSearch").val().trim().split(' ');
+                var searchTextfiter = '';
+                var textcnt = 0;
+
+                for (var i = 0; i < searchText.length; i++) {
+                    if (searchText[i].indexOf('%') >= 0 || searchText[i].indexOf('*') >= 0) {
+                        searchText[i] = searchText[i].replace(/\%/gi, '').replace(/\*/gi, '');
+                        textcnt++;
+                    }
+
+                    if (searchText[i].length > 1) {
+                        searchTextfiter += ' ' + searchText[i].trim();
+                    }
+                    else {
+                        textcnt++;
+                    }
+                }
+
+
+                if (searchTextfiter.trim() == "") {
+                    setAlertMessage("검색어 입력값이 올바르지 않습니다. <br/> 검색 가이드를 참고하세요.");
+                    return false;
+                }
+                if (searchTextfiter.trim().split(' ').length > 3) {
+                    setAlertMessage("검색어는 3개 단어 까지만 허용합니다.");
+                    return false;
+                }
+
+                if (textcnt > 0) {
+                    setAlertMessage("<span>‘" + $("#txtSearch").val().trim() + "’" + "로 입력하셨지만 검색은 ‘<span style='font-weight:bold;'>" + searchTextfiter.trim() + "</span>’ 로 합니다.</span>", function () {
+                        fn_filterSearch(searchTextfiter.trim());
+                    }
+                        , '취소');
+                }
+                
+                if (textcnt == 0) {
+                    fn_filterSearch(searchTextfiter.trim());
+                }
+            }
+
+            function fn_filterSearch(text)
+            {
+                var param = {
+                    "SEARCHTEXT": text.trim(),
+                };
+
+                param = JSON.stringify({ _param: JSON.stringify(param) });
+
+                GetAjaxJsonData(true, "Main.aspx/HistInsert", param,
+                    function (data) {
+                        var form = document.createElement('form');
+                        var objs;
+                        var SearchValue = text.trim() + "^" + setCombSelectValue('HeadorgsList') + "^" + setCombSelectValue('SvcNetList');
+                        objs = document.createElement('input');
+                        objs.setAttribute('type', 'hidden');
+                        objs.setAttribute('name', 'SearchText');
+                        objs.setAttribute('value', SearchValue);
+                        form.appendChild(objs)
+                        form.setAttribute('method', 'post');
+                        form.setAttribute('action', '../../NEA/Main/AllSearch.aspx');
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                );
+            }
+
+            function fn_SearchDelete(txt) {
+                var param = {
+                    "SEARCHTEXT": txt,
+                };
+
+                param = JSON.stringify({ _param: JSON.stringify(param) });
+
+                GetAjaxJsonData(true, "Main.aspx/HistDelete", param,
+                    function (data) {
+                        fn_searchKey();
+                    }
+                );
+            }
+
+            function fn_SearchText(txt) {
+                $("#txtSearch").val(txt);
+                $("#optionBox").hide();
+            }
+
+            function fn_searchKey() {
+
+
+                var param = {
+                    "SEARCHTEXT": $("#txtSearch").val().trim(),
+                };
+
+                param = JSON.stringify({ _param: JSON.stringify(param) });
+
+                GetAjaxJsonData(true, "Main.aspx/HistSearch", param,
+                    function (data) {
+
+                        if (data.d.ErrCode == "01") {
+                            setAlertMessage(data.d.ErrMessge);
+                            $("#optionBox").hide();
+                        }
+                        else {
+                            var listdt = JSON.parse(data.d.Data).Table;
+                            $("#SearchList").empty();
+                            var strContent = "";
+
+                            if (listdt.length > 0) {
+                                $("#optionBox").show();
+                                for (var i = 0; i < listdt.length; i++) {
+                                    strContent += ' <li class="select">';
+                                    strContent += '     <table><tr><td>';
+                                    strContent += "     <button type=\"button\" title=\"" + listdt[i].SEARCHTEXT + "로 입력\" onclick=\"fn_SearchText('" + listdt[i].SEARCHTEXT + "')\">";
+                                    strContent += "         <span>" + (i + 1) + ". " + listdt[i].SEARCHTEXT.replace($("#txtSearch").val(), '<em class="color_red">' + $("#txtSearch").val() + '</em>') + "</span>";
+                                    strContent += "         <span class=\"color_lightgy\">" + listdt[i].INSTDT;
+                                    strContent += "         </span>";
+                                    strContent += "     </button>";
+                                    strContent += '     </td><td style="width:25px; text-align:center;">';
+                                    strContent += "         <span class=\"color_lightgy\" style=\"cursor:pointer\" onclick=\"fn_SearchDelete('" + listdt[i].SEARCHTEXT + "')\">X</span>"
+                                    strContent += '     </td></tr></table>';
+                                    strContent += " </li>";
+                                }
+                                $("#SearchList").append(strContent);
+                            }
+                            else {
+                                $("#optionBox").hide();
+                            }
+
+                        }
+                    }
+                );
+            }
+
+            function setCombAllSelect(ctl) {
+                var allbool = false;
+                var strvalue = '';
+
+                allbool = $($('#' + ctl).find('input:checkbox:first'))[0].checked;
+
+                $('#' + ctl).find('input:checkbox').each(function () {
+                    if ($(this).val() != "") {
+                        $(this)[0].checked = !allbool;
+                    }
+                    //else {
+                    //    $(this)[0].checked = allbool;
+                    //}
+                });
+
+            }
+
+
+            function setAllClear() {
+                $('#HeadorgsList').find('input:checkbox').each(function () {
+                    $(this)[0].checked = false;
+                });
+
+                $('#SvcNetList').find('input:checkbox').each(function () {
+                    $(this)[0].checked = false;
+                });
+
+                //$("#txtSearch").val('');
+            }
+            
+        </script>
+
+
+
+</body>
+
+</html>
