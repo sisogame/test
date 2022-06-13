@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>게시판</title>
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/search.css" />
+    <link type="text/css" rel="stylesheet" href="css/board.css" />
+
+    <link rel="stylesheet" href="../common/css/layout.css">
+    <script src="../common/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body class="sub">
+    <div class="wrapper wrapper_board">
+        <!-- main-header -->
+        <header id="header" class="">
+            <h1 class="logo">
+                <a href="#"><span class="sr-only">고객영향회선산출</span></a>
+            </h1>
+            <div class="gnbWrap">
+                <ul class="nav-depth1 gnb">
+                    <li style="display:none;"><a href="#" class="depth1">데이터현황</a></li>
+                    <li><a href="#" class="depth1">데이터 현황</a></li>
+                    <li><a href="#" class="depth1">데이터분석</a></li>
+                    <li><a href="#" class="depth1">GIS분석</a></li>
+                    <li><a href="#" class="depth1">데이터요청</a></li>
+                    <li><a href="#" class="depth1">마이페이지</a></li>
+                    <li><a href="#" class="depth1">시스템소개</a></li>
+                </ul>
+            </div>
+
+            <ul class="control clearfix">
+                <li><a href="#" rel="modal:open" class="login"><span>로그인</span></a></li>
+                <li><a href="javascript:void(0)" class="menu-open">메뉴</a></li>
+                <li><a href="javascript:void(0)" class="menu-close">메뉴닫기</a></li>
+            </ul>
+
+            <div class="menu-wrap">
+                <div class="f_Wrap">
+                    <ul class="menu">
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><a href="#">데이터 현황</a></dt>
+                                <dd>
+                                    <a href="#">데이터산출방식</a>
+                                    <a href="#"><span>데이터산출대상</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><a href="#">데이터 분석</a></dt>
+                                <dd>
+                                    <a href="#">시설분석</a>
+                                    <a href="#"><span>케이블분석</span></a>
+                                    <a href="#"><span>KT국사분석</span></a>
+                                    <a href="#"><span>지역분석</span></a>
+                                    <a href="#"><span>건물분석</span></a>
+                                    <a href="#"><span>건물분석</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><a href="#">GIS분석</a></dt>
+                                <dd><a href="#">GIS분석</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><a href="#">데이터요청</a></dt>
+                                <dd></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>마이페이지</span></dt>
+                                <dd>
+                                    <a href="#">데이터출력</a>
+                                    <a href="#">북마크관리</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>시스템소개</span></dt>
+                                <dd>
+                                    <a href="#">활용가이드</a>
+                                    <a href="#">공지사항</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //main-header -->
+
+        <!-- navigation bar -->
+        <div class="navigation-Bar" style="">
+
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li class="home"><a href="#">홈</a></li>
+                    <li><a href="#">데이터 현황</a></li>
+                    <li class="dropdown">
+                        <a onclick="myFunction()" class="dropbtn">데이터산출방식</a>
+                        <div id="breadcrumb_Dropdown" class="dropdown-content">
+                            <a href="#">데이터산출방식</a>
+                            <a href="#">데이터산출대상</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="breadcrumb-search">
+                    <input type="text" title="검색어" name="" value="" placeholder="찾고 싶은 데이터를 검색하세요.">
+                    <a href="">검색</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="board_container" style="">
+
+            <div class="side_left">
+                <h2 class="side_title"> 시스템소개</h2>
+                <ul class="sideNav">
+                    <li><a href="" class="snbWrap">활용가이드 </a></li>
+                    <li><a href="" class="snbWrap">공지사항 </a></li>
+                    <li><a class="snbWrap active" href="">게시판</a></li>
+                </ul>
+            </div>
+            <div class="side_right">
+                <div class="aly_title">
+                    <h2 class="icon6 -title">게시판</h2>
+                </div>
+                <div class="board_wrap fxColumn pd0">
+                    <div class="board_area -searchArea pLfRt15">
+                        <div class="-b_searchArea formsB">
+                            <p class="label" for="검색">검색</p>
+                            <input type="text" id="" class="input btn_select" placeholder="작성자 제목" autocomplete="off">
+                            <a href="#" class="btn_writing">글쓰기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listArea">
+                    <!-- table overflow-x:[s] -->
+                    <table class="board_tbl">
+                        <colgroup class="just-pc">
+                            <col style="width:100px;"><!-- NO. -->
+                            <col><!-- 제목 -->
+                            <col style="width:150px;"><!-- 등록자 -->
+                            <col style="width:200px;"><!-- 등록일 -->
+                            <col style="width:100px;"><!-- 첨부 -->
+                            <col style="width:100px;"><!-- 조회수 -->
+                        </colgroup>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>등록자</th>
+                            <th>등록일</th>
+                            <th>첨부</th>
+                            <th>조회수</th>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td class="alignL"><a href="">게시판 입니다...</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>이순신</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"><img src="../common/images/icon_clip.svg" width="20" height="20"></a></td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>이순신</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"><img src="../common/images/icon_clip.svg" width="20" height="20"></a></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="alignL"><a>게시판 입니다...</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="alignL"><a href="">게시판 입니다...</a></td>
+                            <td>이순신</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"><img src="../common/images/icon_clip.svg" width="20" height="20"></a></td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="alignL"><a href="">날씨가 좋습니다.</a></td>
+                            <td>이순신</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"><img src="../common/images/icon_clip.svg" width="20" height="20"></a></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="alignL"><a href="">게시판 입니다...</a></td>
+                            <td>홍길동</td>
+                            <td>2022-05-22</td>
+                            <td><a href="" title="첨부"></a></td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                    <!-- table overflow-x:[e] -->
+                </div>
+
+                <div class="-list_footer">
+                    <ul class="-list_area">
+                        <li class="left">
+                            <p class="tit_result">검색결과 : <span>5건</span></p>
+                        </li>
+                        <li class="right">
+                            <!-- pagination::[s] -->
+                            <div class="pagination" aria-label="페이지 선택 영역">
+                                <ul class="pagination__list">
+                                    <li class="pagination__link -Thefirst">
+                                        <a href="" class="pagination__link isDisabled"><span class="_hidden">go The first page</span></a>
+                                    </li>
+                                    <li class="pagination__item -ctrl -first">
+                                        <a href="javascript:goPage(0);" class="pagination__link -link_hover"><span class="_hidden">go first page</span></a>
+                                    </li>
+                                    <li class="pagination__item -ctrl -prev">
+                                        <a href="javascript:goPage(1);" class="pagination__link -link_hover"><span class="_hidden">go prev page</span></a>
+                                    </li>
+                                    <li class="pagination__item -active -mrt8" aria-current="page">1</li>
+                                    <li class="pagination__item -mrt8">
+                                        <a href="javascript:goPage(2);" class="pagination__link">2<span class="_hidden">&nbsp; go page</span></a>
+                                    </li>
+                                    <li class="pagination__item -mrt8">
+                                        <a href="javascript:goPage(3);" class="pagination__link">3<span class="_hidden">&nbsp; go page</span></a>
+                                    </li>
+                                    <li class="pagination__item -mrt8">
+                                        <a href="javascript:goPage(4);" class="pagination__link">4<span class="_hidden">&nbsp; go page</span></a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="javascript:goPage(5);" class="pagination__link">5<span class="_hidden">&nbsp; go page</span></a>
+                                    </li>
+                                    <li class="pagination__item -ctrl -next">
+                                        <a href="javascript:goPage(6);" class="pagination__link -link_hover"><span class="_hidden">go next page</span></a>
+                                    </li>
+                                    <li class="pagination__item -ctrl -last">
+                                        <a href="javascript:goPage(7);" class="pagination__link -link_hover"><span class="_hidden">go last page</span></a>
+                                    </li>
+                                    <li class="pagination__link -Thelast">
+                                        <a href="" class="pagination__link isDisabled"><span class="_hidden">go the last page</span></a>
+                                    </li>
+                                </ul>
+                                <!-- pagination::[e] -->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- board area [e] -->
+            </div>
+
+        </div>
+
+        <footer class="-wrap_footer">
+            <div class="footer_container">
+                <p class="copyright">Copyright&copy; 2022 KT Corp. All rights reserved.</p>
+                <a href="#">
+                    <img src="../common/images/logo_bk.svg" alt="KT logo" width="24" height="24">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../common/js/main.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

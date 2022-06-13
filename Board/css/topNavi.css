@@ -1,0 +1,129 @@
+﻿/* /////////////////////////////////////////
+
+  sub-top navigtion
+
+/////////////////////////////////////////*/
+
+#navigation {
+	position: relative;
+	bottom: 0px;
+	height: 48px;
+}
+
+/* HEADER > MENU */
+#main-menu {
+	/* float: right; */
+	font-size: 0;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#main-menu>li {
+	display: inline-block;
+	/* margin-left: 90px; */
+	/* width: 100px; */
+	/* height: 48px; */
+	 height: 100%;
+	text-align: center;
+}
+
+#main-menu>li:first-child {
+	margin-left: 0;
+}
+
+#main-menu>li>a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 48px;
+	text-decoration: none;
+	padding: 0 60px;
+}
+
+#main-menu>li:hover>a,
+#main-menu>li.current-menu-item>a {
+	color: #fff;
+	/* border-bottom: 3px solid #D02C2F; */
+	background-color: #D02C2F;
+	content: "";
+	display: block;
+	/* width: 100px; */
+}
+
+/* HEADER > MENU > DROPDOWN */
+#main-menu li {
+	position: relative;
+}
+
+ul.sub-menu {
+	/* level 2 */
+	display: none;
+	left: 0px;
+	top: 48px;
+	position: absolute;
+	width: 100%;
+	z-index: 9999;
+	border: 1px solid #D2D2D2;
+	background-color: #fff;
+	
+}
+
+ul.sub-menu ul.sub-menu {
+	/* level 3+ */
+	margin-top: -1px;
+	padding-top: 0;
+	left: 149px;
+	top: 0px;
+}
+
+ul.sub-menu>li>a {
+	background-color: #fff;
+	border-top: none;
+	color: #848484;
+	display: block;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	padding: 0 8px;
+	text-align: center;
+}
+
+ul.sub-menu>li>a:first-child {
+	margin-top: 12px;
+}
+
+ul.sub-menu>li>a:last-child {
+	margin-bottom: 20px;
+}
+
+
+ul.sub-menu>li>a:hover,
+ul.sub-menu>li>a.active {
+	background-color: #fff;
+	color: #000;
+	font-weight: 500;
+}
+
+ul.sub-menu>li>a.parent {
+	background-image: url(../images/arrow.png);
+	background-size: 5px 9px;
+	background-repeat: no-repeat;
+	background-position: 95% center;
+}
+
+#main-menu li:hover>ul.sub-menu {
+	display: block;
+	/* show the submenu */
+}
+
+/* top text */
+.login,
+.sitemap {
+	width: auto;
+	height: 28px;
+	color: #fff;
+	font-size: 13px;
+	padding: 4px 0;
+	margin-right: 8px;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>게시판 글쓰기</title>
+    <link type="text/css" rel="stylesheet" href="../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/search.css" />
+    <link type="text/css" rel="stylesheet" href="css/board.css" />
+    <link rel="stylesheet" href="../common/css/layout.css">
+    <script src="../common/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body class="sub">
+    <div class="wrapper wrapper_board">
+        <!-- main-header -->
+        <header id="header" class="">
+            <h1 class="logo">
+                <a href="#"><span class="sr-only">고객영향회선산출</span></a>
+            </h1>
+            <div class="gnbWrap">
+                <ul class="nav-depth1 gnb">
+                    <li style="display:none;"><a href="#" class="depth1">데이터현황</a></li>
+                    <li><a href="#" class="depth1">데이터 현황</a></li>
+                    <li><a href="#" class="depth1">데이터분석</a></li>
+                    <li><a href="#" class="depth1">GIS분석</a></li>
+                    <li><a href="#" class="depth1">데이터요청</a></li>
+                    <li><a href="#" class="depth1">마이페이지</a></li>
+                    <li><a href="#" class="depth1">시스템소개</a></li>
+                </ul>
+            </div>
+
+            <ul class="control clearfix">
+                <li><a href="#" rel="modal:open" class="login"><span>로그인</span></a></li>
+                <li><a href="javascript:void(0)" class="menu-open">메뉴</a></li>
+                <li><a href="javascript:void(0)" class="menu-close">메뉴닫기</a></li>
+            </ul>
+
+            <div class="menu-wrap">
+                <div class="f_Wrap">
+                    <ul class="menu">
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><a href="#">데이터 현황</a></dt>
+                                <dd>
+                                    <a href="#">데이터산출방식</a>
+                                    <a href="#"><span>데이터산출대상</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><a href="#">데이터 분석</a></dt>
+                                <dd>
+                                    <a href="#">시설분석</a>
+                                    <a href="#"><span>케이블분석</span></a>
+                                    <a href="#"><span>KT국사분석</span></a>
+                                    <a href="#"><span>지역분석</span></a>
+                                    <a href="#"><span>건물분석</span></a>
+                                    <a href="#"><span>건물분석</span></a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1 noBg"><a href="#">GIS분석</a></dt>
+                                <dd><a href="#">GIS분석</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><a href="#">데이터요청</a></dt>
+                                <dd></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>마이페이지</span></dt>
+                                <dd>
+                                    <a href="#">데이터출력</a>
+                                    <a href="#">북마크관리</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="nav-depth1"><span>시스템소개</span></dt>
+                                <dd>
+                                    <a href="#">활용가이드</a>
+                                    <a href="#">공지사항</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //main-header -->
+
+        <!-- navigation bar -->
+        <div class="navigation-Bar" style="">
+
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li class="home"><a href="#">홈</a></li>
+                    <li><a href="#">데이터 현황</a></li>
+                    <li class="dropdown">
+                        <a onclick="myFunction()" class="dropbtn">데이터산출방식</a>
+                        <div id="breadcrumb_Dropdown" class="dropdown-content">
+                            <a href="#">데이터산출방식</a>
+                            <a href="#">데이터산출대상</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="breadcrumb-search">
+                    <input type="text" title="검색어" name="" value="" placeholder="찾고 싶은 데이터를 검색하세요.">
+                    <a href="">검색</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="board_container">
+            <div class="side_left">
+                <h2 class="side_title"> 시스템소개</h2>
+                <ul class="sideNav">
+                    <li><a href="" class="snbWrap">활용가이드 </a></li>
+                    <li><a href="" class="snbWrap">공지사항 </a></li>
+                    <li><a class="snbWrap active" href="">게시판</a></li>
+                </ul>
+            </div>
+            <div class="side_right">
+
+                <div class="aly_title">
+                    <h2 class="icon6 -title">게시판 글쓰기</h2>
+                </div>
+                <!-- board area [s] -->
+                <div class="board_view">
+                    <h3 class="viewTit border_bt">게시판 글쓰기</h3>
+
+                    <div class="writ_wrap -wite_searchArea formsB mt15">
+                        <input type="text" id="" class="input btn_select  input100" placeholder="제목을 입력하세요">
+                    </div>
+
+                    <div class="view-writ mt15">
+                        <textarea>댓글을 입력해 주세요(1,000자까지 입력 가능)</textarea>
+                    </div>
+
+                    <div class="writ_wrap -b_searchArea formsB mt15">
+                        <input type="text" id="" class="input -m-input_size btn_select  input100" placeholder="파일 첨부하기 (최대크기 : 50MB)">
+
+                        <div class="find-btn-wrapper">
+                            <button class="find_btn">파일찾기</button>
+                            <input type="file" name="myfile" />
+                        </div>
+                    </div>
+                    <div class="btn_right">
+                        <div class="right_item">
+                            <p>
+                                <a href="#" class="btn_board">등록</a>
+                                <a href="#" class="btn_board">닫기</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- board area [e] -->
+            </div>
+        </div>
+
+
+        <footer class="-wrap_footer">
+            <div class="footer_container">
+                <p class="copyright">Copyright&copy; 2022 KT Corp. All rights reserved.</p>
+                <a href="#">
+                    <img src="../common/images/logo_bk.svg" alt="KT logo" width="24" height="24">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="../common/js/main.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById("breadcrumb_Dropdown").classList.toggle("show");
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
